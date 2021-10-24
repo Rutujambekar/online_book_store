@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block title%}Home{% endblock title%}
+{% block content %}
+
+<br>
+<h2>Want to become seller <a href='{% url 'storeform' %}' ><button class="btn btn-outline-dark my-2">Create Store</button></a></h2> 
+<br>
+<h1 class='text-center' >Book Stores List</h1>
+{% for item in items %}
+<div id='stores' class="container my-4">
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="static/images/{{item.storeimage}}" alt="">
+        </div>
+        <div class="col-md-4">
+                
+                <div class="store-text"><h3>{{item.storename}}</h3></div>
+                <div class="store-text"><h5>Store Owner: {{item.first_name}} {{item.last_name}}</h5></div>
+                <div class="store-text"><h5>Total Books: {{item.totalbooks}}</h5></div>
+                <div class="store-text"><h5>Rating : 4/5</h5></div>
+        </div>
+    
+    
+        <div class="col-md-4">
+            <div id="btn-bookstore" >
+                <a href="/book_library{{item.storename}}" ><button class="btn btn-outline-dark my-2">View Books</button></a>
+            </div>
+            <div id="btn-bookstore">
+                <a href="/bookform{{item.storename}}" ><button class="btn btn-outline-dark my-2">Add Books</button></a>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% endfor %}
+
+{% endblock content %}

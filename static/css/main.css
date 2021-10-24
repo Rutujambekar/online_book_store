@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body {
+    overflow-x: hidden;
+}
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow-x: hidden;
+    background-color: hsl(0, 0%, 98%);
+    margin-top: 50px;
+}
+
+
+#forms input{
+    width: 100%;
+}
+#forms {
+    width: 50%;
+    padding: 3% 3%;
+    background-color: #e5e5e5;
+    border-radius: 20px;
+      
+}
+
+#stores {
+    width: 100%;
+    padding: 3% 3%;
+    background-color: #e5e5e5;
+    border-radius: 20px;
+}
+
+#stores img{
+    width: 70%;
+}
+
+#library img{
+    width: 50%;
+}
+
+.store-text{
+    margin: 5px 0px;
+}
+
+#user-icon{
+	width:35px;
+	display: inline-block;
+	margin:0 15px;
+    border-radius: 50px;
+}
+
+#btn-bookstore{
+    display: flex;  
+    justify-content: center;  
+    align-items: center; 
+}
+
+.navbar {
+    top: 0;
+    z-index: 100;
+  position: fixed;
+    width: 100%;
+}

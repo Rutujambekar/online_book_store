@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block title%}Seller Login{% endblock title%}
+{% block content %}
+
+<br>
+<br>
+<div id='forms' class="container my-4">
+    <div class="row">
+        <div class="col-md-12">
+            <form method='post' action="">
+                {% csrf_token %}
+                <h3>Login For Sellers</h3>
+                <div class="mb-3 my-4">
+                    <label for="formGroupExampleInput" class="form-label">Username</label>
+                    <input type="text" class="form-control" name='username' id="username" placeholder="Enter your Username">
+                    </div>
+                    <div class="mb-3 my-4">
+                    <label for="formGroupExampleInput2" class="form-label">Password</label>
+                    <input type="password" class="form-control" name='password' id="password" placeholder="Enter your Password">
+                </div>
+                <div class="login-btn text-center">
+                    <button type="submit" class="btn btn-outline-dark my-2">Login</button>
+                </div>
+            </form>
+            <h6 class="text-center">Don't have an account ? <a href="{% url 'register_seller' %}" class="">Register First</a></h6>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

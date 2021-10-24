@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title%}Books Library{% endblock title%}
+{% load static%}
+{% block content %}
+
+<br>
+<a href="/bookform{{storename}}" ><button class="btn btn-outline-dark my-2">Add New Book</button></a>
+<br>
+<h1 class='text-center' >Books library</h1>
+<br>
+    {% for item in items %}
+<div id='stores' class="container my-4">
+    
+    <div class="row">
+        <div id='library' class="col-md-4">
+            <img src="static/images/{{item.bookimage}}" alt="">
+        </div>
+        <div class="col-md-4">
+                
+                <div class="store-text"><h3>{{item.bookname}}</h3></div>
+                <br>
+                <div class="store-text"><h5>Book ID : {{item.bookid}}</h5></div>
+                <div class="store-text"><h5>Book Author: {{item.bookauthor}}</h5></div>
+                <div class="store-text"><h5>Books Price : ${{item.bookprice}}</h5></div>
+                
+        </div>
+    
+    
+        <div class="col-md-4">
+            <div id="btn-bookstore">
+                <a href="#" ><button class="btn btn-outline-dark my-2">Buy Now</button></a>
+            </div>
+        
+        {% if request.user.username == user.username %}
+        
+            <div id="btn-bookstore">
+                <a href="/book_update{{item.bookid}}" ><button class="btn btn-outline-dark my-2">Update</button></a>
+            </div>
+            <div id="btn-bookstore">
+                <a href="/book_delete{{item.bookid}}" ><button class="btn btn-outline-dark my-2">Delete</button></a>
+            </div>
+        
+        {% endif %}
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    
+
+{% endblock content %}
